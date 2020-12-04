@@ -1,5 +1,5 @@
 import './styles.css';
-import './js/io';
+// import './js/io';
 import debounce from 'lodash.debounce';
 import './../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import imagesCardTpl from './templates/img-card-markup.hbs';
@@ -43,23 +43,23 @@ function clearArticlesList() {
   refs.outputList.innerHTML = '';
 }
 
-//infinite scroll settings
+// infinite scroll settings
 
-// const intersectionCallback = entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting && pixabayApiServise.query !== '') {
-//       fetchToPixabayApiAndRender();
-//     }
-//   });
-// };
+const intersectionCallback = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && pixabayApiServise.query !== '') {
+      fetchToPixabayApiAndRender();
+    }
+  });
+};
 
-// const intersectionOptions = {
-//   rootMargin: '0% 0% 50% 0%',
-// };
+const intersectionOptions = {
+  rootMargin: '0% 0% 50% 0%',
+};
 
-// const observer = new IntersectionObserver(
-//   intersectionCallback,
-//   intersectionOptions,
-// );
+const observer = new IntersectionObserver(
+  intersectionCallback,
+  intersectionOptions,
+);
 
-// observer.observe(refs.watcher);
+observer.observe(refs.watcher);

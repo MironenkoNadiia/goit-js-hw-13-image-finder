@@ -1,5 +1,5 @@
 const options = {
-    
+    rootMargin: '100px'
 }
 const callback = entries => {
     entries.forEach(entry => {
